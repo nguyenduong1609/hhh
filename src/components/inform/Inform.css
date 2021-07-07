@@ -1,0 +1,103 @@
+.container-inform {
+  font-size: 12px;
+  width: auto;
+  padding: 1rem 0 0 0;
+  /* box-shadow: -2px 2px 4px rgb(202, 202, 202); */
+  /* border-left: #242424 solid 0.01px; */
+}
+
+.inform-1-1 {
+  font-size: 14px;
+  margin-left: 1rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.otrong {
+ 
+  height: 40px;
+  margin: 0.3rem 0 0.3rem 1.3rem;
+  border-left:  #dbdbdb solid 0.01px;
+}
+
+/* .sim-disabled {
+  height: 60px;
+} */
+.inform-logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  margin: 0rem 0 0.3rem 0.6rem;
+}
+.inform-logo i {
+  color: blue;
+}
+.inform-logo p {
+  font-size: 15px;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 0;
+  margin-left: 0.5rem;
+}
+
+.infomation {
+  margin: 0.3rem 0 0.3rem 1.6rem;
+  border-left: #dbdbdb solid 0.01px;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+}
+.infomation .fa-user {
+  margin-left: 6px;
+  padding-left: 6px;
+  border-left: #242424 solid 0.01px;
+}
+.infomation p {
+  text-decoration: none;
+  align-items: center;
+  /* text-align: center; */
+  font-size: 13px;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  
+}
+
+.infomation-0 a {
+  text-decoration: none;
+  font-size: 14px;
+  
+}
+.infomation-0-1 {
+  color: rgb(70, 36, 224);
+}
+
+.infomation-disabled {
+  color: rgb(245, 228, 77);
+}
+.infomation-activated {
+  color: rgb(91, 245, 30);
+}
+.infomation-failed {
+  color: rgb(245, 30, 41);
+}
+.user-login .infomation {
+  border-left: none;
+}
+
+.button-inform {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-left: 20%;
+  width: 60%;
+  height: 3rem;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #242424;
+  border: blue solid 2px;
+  border-radius: 1.5rem;
+}
+.button-inform:hover {
+  background-color: #d6cfcf;
+}

@@ -1,0 +1,70 @@
+.dashboad1 {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    box-shadow: 0 8px 6px -6px rgb(202, 202, 202);
+    /* float: left; */
+    height: 100px;
+    border-right: #dbdbdb solid 0.01px;
+}
+
+.dashboad1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.dashboad1-h1 {
+    margin-left: 2rem;
+    margin-right: 1rem;
+}
+
+.down-dashboad1-h1 {
+    font-size: 1rem;
+    color: rgb(14, 12, 12);
+}
+.search-dashboad1-h1 {
+    font-size: 1.5rem;
+    color: rgb(22, 22, 22);
+}
+
+.dashboad1-button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 140px;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    background-color: royalblue;
+    margin-left: 1.8rem;
+    box-shadow: 2px 3px 4px 0px rgb(174, 181, 202);
+}
+.dashboad1-button i {
+    font-size: 1.5rem;
+    color: rgb(70, 70, 70);
+}
+.dashboad1-button p {
+    margin-bottom: 0;
+}
+.search-dashboad1-h1 {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 4%;
+    display: flex;
+}
+.search-dashboad1-h1 i {
+    flex-grow: 1;
+    text-align: right;
+    padding-right: 4%;
+}
+.search-dashboad1-h1 input {
+    background-color: rgb(255, 255, 255);
+    display: none;
+    flex-grow: 9;
+}
+.search-dashboad1-h1:hover .search {
+    display: block;
+}
