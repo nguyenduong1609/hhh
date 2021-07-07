@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Autocomplete, GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
@@ -37,10 +38,9 @@ function Mymap() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+        <div></div>
       </GoogleMap>
-  ) : <></>
+  ) : <div></div>
 }
 
 export default React.memo(Mymap)
