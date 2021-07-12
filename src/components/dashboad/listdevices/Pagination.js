@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-function Pagination({ pages = 10, setCurrentPage }) {
+function Pagination({ pages, setCurrentPage }) {
 
   //Set number of pages
+  // console.log('page: ', pages);
   const numberOfPages = []
   for (let i = 1; i <= pages; i++) {
     numberOfPages.push(i)
   }
+  // console.log('mảng page: ', numberOfPages)
+
 
   // Current active button number
   const [currentButton, setCurrentButton] = useState(1)
-
+ 
+  // console.log('mảng currenbutton: ', currentButton)
   // Array of buttons what we see on the page
   const [arrOfCurrButtons, setArrOfCurrButtons] = useState([])
 
@@ -60,10 +64,12 @@ function Pagination({ pages = 10, setCurrentPage }) {
     else if (currentButton === dotsLeft) {
       setCurrentButton(arrOfCurrButtons[3] - 2)
     }
-
+    // console.log('mang hien: ', tempNumberOfPages )
     setArrOfCurrButtons(tempNumberOfPages)
     setCurrentPage(currentButton)
-  }, [currentButton])
+    console.log('mang day so hien: ', arrOfCurrButtons)
+  },[currentButton, pages]
+  )
 
 
   return (

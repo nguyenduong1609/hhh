@@ -58,7 +58,7 @@ function Dashboad3() {
             <p className>Device Connections</p>                       
             <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
           </div>
-          <Mymap />
+          {/* <Mymap /> */}
         </div>
         
       </div>

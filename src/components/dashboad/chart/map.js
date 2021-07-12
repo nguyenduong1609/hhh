@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Autocomplete, GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
