@@ -65,7 +65,7 @@ function Dashboad41() {
     const mangtimkiem1 =[];
     setSearchTerm(value);
     posts.forEach((item) => {
-      if(item.Nickname.toLowerCase().indexOf(value) !== -1){
+      if(item.Nickname.toLowerCase().indexOf(value.toLowerCase()) !== -1){
         mangtimkiem1.push(item);
       }
     })
