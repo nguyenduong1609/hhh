@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Pagination from './listdevices/Pagination'
+import classNames from 'classnames';
 import './listdevices/Pagination.css'
 import './Dashboad4.css';
 import axios from 'axios';
 
 import { BrowserRouter as Router, Switch, Link} from 'react-router-dom';
 
-import { Container, Row, Col, FormGroup, Label, Input } from 'reactstrap';
+import { Container, Row, Col, Input, } from 'reactstrap';
 
 
 
@@ -19,6 +20,14 @@ function Dashboad41() {
   const [postsPerPage, setPostsPerPage] = useState(5);
   const [searchTerm, setSearchTerm] = useState('');
   // const typingTimeoutRef = useRef(null);
+
+  const [trangthaiid, setTrangthaiid] = useState(false);
+  const [trangthaicycle, setTrangthaicycle] = useState(false);
+  const [trangthaiphone, setTrangthaiphone] = useState(false);
+  const [trangthaiactivated, setTrangthaiactivated] = useState(false);
+  // const [trangthaiid, setTrangthaiid] = useState(false);
+  
+
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -83,6 +92,22 @@ function Dashboad41() {
     setMangtimkiem(mangsx);    
   }
 
+  function handleChangeCheckboxid(event) {
+    let checked = event.target.checked;
+    setTrangthaiid(checked);
+  }
+  function handleChangeCheckboxcycle(event) {
+    let checked = event.target.checked;
+    setTrangthaicycle(checked);
+  }
+  function handleChangeCheckboxphone(event) {
+    let checked = event.target.checked;
+    setTrangthaiphone(checked);
+  }
+  function handleChangeCheckboxactivated(event) {
+    let checked = event.target.checked;
+    setTrangthaiactivated(checked);
+  }
 
   return (
     <div className="container">
@@ -109,6 +134,38 @@ function Dashboad41() {
             </li>                        
           </ul>
 
+          <ul className='nav-menu-db4'>
+            <li className='nav-item-db4'>
+              <Input 
+                className='data-input' 
+                type="checkbox" 
+                // onChange={event => {
+                //   let checke = event.target.checked;
+                //   console.log(checke);
+                //  }
+                   
+                //  }
+              />{'Nickname'}
+            </li>
+            <li className='nav-item-db4'>
+              <Input
+                className='data-input' 
+                type="checkbox" 
+                onChange={handleChangeCheckboxid}
+              />{'ID'}
+            </li>
+            <li className='nav-item-db4'>
+              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxcycle} />{'Cycle To Date Usage'}
+            </li>   
+            <li className='nav-item-db4'>
+              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxphone} />{'Phone Number'}
+            </li>
+            <li className='nav-item-db4'>
+              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxactivated} />{'Activated'}
+            </li>                       
+          </ul>
+
+
           <form className="container-search">            
             <input 
               type="text" 
@@ -119,7 +176,6 @@ function Dashboad41() {
             />
             <span className="icon"><i className="fa fa-search"></i></span>
           </form>
-
           <select className='select' onChange={handleChange} >      
             <option value='5'>Top 5 Most Used</option>
             <option value="10">Top 10 Most Used</option>
@@ -136,63 +192,76 @@ function Dashboad41() {
             <div className='devices-data'>
               <Container>
                 
-                <Row className='data-navs'>         
+                <Row className='data-navs'>
+                  <Col sm='1'>
+                    <Input className='data-input' type="checkbox" />
+                  </Col>         
                   <Col className='data-checkbox' sm='3'>
-                    <FormGroup>
-                      <Label>
-                        <Input className='data-input' type="checkbox" />{' '}
-                        Nickname &nbsp; &nbsp;
-                              
-                      </Label>
-                        <i 
-                          href='#'
-                          class="fas fa-sort-down" 
-                          onClick={handleSort1}
-                        >
-
-                        </i> &nbsp; &nbsp;  
-                        <i 
-                          class="fas fa-sort-up"
-                          href='#'
-                          onClick={handleSort2}
-                        ></i>   
-                    </FormGroup>
+                    Nickname &nbsp; &nbsp;
+                    <i 
+                      href='#'
+                      class="fas fa-sort-down" 
+                      onClick={handleSort1}
+                    >
+                    </i> &nbsp; &nbsp;  
+                    <i 
+                      class="fas fa-sort-up"
+                      href='#'
+                      onClick={handleSort2}
+                    >
+                    </i>    
                   </Col>
-                  <Col className='data-id d-none' sm='1'>
+                  <Col 
+                    className={ classNames('data-id', {an: trangthaiid===true})}
+                    sm='1'>
                     ID
                   </Col>
-                  <Col className='data-date'sm='3'>
+                  <Col 
+                    className={ classNames('data-date', {an: trangthaicycle===true})}
+                    sm='3'>
                     Cycle To Date Usage (MB)
                   </Col>
-                  <Col className='data-phone'sm='3'>
+                  <Col 
+                    className={ classNames('data-phone', {an: trangthaiphone===true})}
+                    sm='2'>
                     Phone Number
                   </Col>
-                  <Col className='data-activated' sm='2'>
+                  <Col 
+                    className={ classNames('data-activated', {an: trangthaiactivated===true})}
+                    sm='2'>
                     Activated
                   </Col>                    
                 </Row>
 
                 
                 {currentPosts.map((post, index) => (
+                  
                   <Row className='data-nav' key={index}>
+                    <Col sm='1'>
+                      <Input key={post.id} className='data-input' type="checkbox" checked={posts.Trangthai} />
+                    </Col>         
                     <Col sm='3'>
-                      <FormGroup>
-                        <Label>
-                          <Input key={post.id} className='data-input' type="checkbox" />            
-                          {post.Nickname}
-                        </Label>
-                      </FormGroup>
+                      {post.Nickname}
                     </Col>
-                    <Col sm='1 d-none'>
+                    <Col 
+                      className={ classNames('data-id', {an: trangthaiid===true})}
+                      sm='1'
+                    >
                       {post.id}
                     </Col>
-                    <Col sm='3'>
+                    <Col 
+                      className={ classNames('data-date', {an: trangthaicycle===true})}
+                      sm='3'>
                       {post.Data}
                     </Col>
-                    <Col sm='3'>
+                    <Col
+                    className={ classNames('data-phone', {an: trangthaiphone===true})}
+                     sm='2'>
                       {post.Phone}
                     </Col>
-                    <Col sm='2'>
+                    <Col
+                      className={ classNames('data-activated', {an: trangthaiactivated===true})}
+                      sm='2'>
                       {post.Date}
                     </Col>         
                   </Row>

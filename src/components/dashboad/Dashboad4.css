@@ -124,3 +124,7 @@
 .data-activated {
   width: 20%;
 }
+
+.an {
+  display: none;
+}
