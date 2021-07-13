@@ -67,7 +67,7 @@ function Pagination({ pages, setCurrentPage }) {
     // console.log('mang hien: ', tempNumberOfPages )
     setArrOfCurrButtons(tempNumberOfPages)
     setCurrentPage(currentButton)
-    console.log('mang day so hien: ', arrOfCurrButtons)
+    // console.log('mang day so hien: ', arrOfCurrButtons)
   },[currentButton, pages]
   )
 

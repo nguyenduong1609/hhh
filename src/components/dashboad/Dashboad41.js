@@ -21,6 +21,8 @@ function Dashboad41() {
   const [searchTerm, setSearchTerm] = useState('');
   // const typingTimeoutRef = useRef(null);
 
+  const [sxeptheoten, setSxeptheoten] = useState(false);
+
   const [trangthaiid, setTrangthaiid] = useState(false);
   const [trangthaicycle, setTrangthaicycle] = useState(false);
   const [trangthaiphone, setTrangthaiphone] = useState(false);
@@ -33,7 +35,7 @@ function Dashboad41() {
     const fetchPosts = async () => {
       setLoading(true)
       const res = await axios.get('https://60dac40a801dcb0017290b41.mockapi.io/user');
-      console.log('dai ca duong' , res);
+      // console.log('dai ca duong' , res);
       setPosts(res.data);
       setMangtimkiem(res.data);
       setLoading(false)
@@ -72,24 +74,27 @@ function Dashboad41() {
     // console.log('dka duong dka: ', mangtimkiem1);
   } 
 
-  function handleSort1() {
-    mangtimkiem.sort(function(sv1, sv2) {
-      const a = sv1.Nickname.toLowerCase();
-      const b = sv2.Nickname.toLowerCase();
-      return a === b ? 0 : a > b ? 1 : -1;
-    });
-    const mangsx =[...mangtimkiem]
-    setMangtimkiem(mangsx);
-  }
-
-  function handleSort2() {
-    mangtimkiem.sort(function(sv1, sv2) {
-      const a = sv1.Nickname.toLowerCase();
-      const b = sv2.Nickname.toLowerCase();
-      return a === b ? 0 : a < b ? 1 : -1;
-    });
-    const mangsx =[...mangtimkiem]
-    setMangtimkiem(mangsx);    
+  function handleSort() {
+    if (sxeptheoten === false) {
+      mangtimkiem.sort(function(sv1, sv2) {
+        const a = sv1.Nickname.toLowerCase();
+        const b = sv2.Nickname.toLowerCase();
+        return a === b ? 0 : a > b ? 1 : -1;
+      });
+      const mangsx =[...mangtimkiem]
+      setMangtimkiem(mangsx);
+      setSxeptheoten(true);
+    }
+    else if (sxeptheoten ===true) {
+      mangtimkiem.sort(function(sv1, sv2) {
+        const a = sv1.Nickname.toLowerCase();
+        const b = sv2.Nickname.toLowerCase();
+        return a === b ? 0 : a < b ? 1 : -1;
+      });
+      const mangsx =[...mangtimkiem]
+      setMangtimkiem(mangsx);
+      setSxeptheoten(false);    
+    }
   }
 
   function handleChangeCheckboxnickname(event) {
@@ -111,6 +116,24 @@ function Dashboad41() {
   function handleChangeCheckboxactivated(event) {
     let checked = event.target.checked;
     setTrangthaiactivated(checked);
+  }
+
+  function handleChangeCheckboxData(data) {
+    return(event) => {
+      const checked = event.target.checked;
+      
+     setMangtimkiem(
+       mangtimkiem.map(d =>{
+         if (data.id ==d.id) {
+           d.Trangthai = checked;
+         }
+         return d;
+       })
+     );
+    //  console.log(mangtimkiem);
+    //  console.log(checked);
+    };
+    
   }
 
   return (
@@ -142,7 +165,7 @@ function Dashboad41() {
           </ul>
           <div className='hien-an'>
               Hiện Ẩn &nbsp;&nbsp;
-              <i href='#' class="fas fa-sort-down" ></i>
+              <i href='#' className="fas fa-sort-down" ></i>
               <ul className='nav-an'>
                 <li className='nav-item-an'>
                   <Input className='nickname-an' type="checkbox" onChange={handleChangeCheckboxnickname} />{'Nickname'}
@@ -195,22 +218,16 @@ function Dashboad41() {
                     <Input className='data-input' type="checkbox" />
                   </Col>         
                   <Col 
-                    className='data-checkbox' 
                     className={ classNames('data-checkbox', {an: trangthainickname===true})}
                     sm='3'>
                     Nickname &nbsp; &nbsp;
                     <i 
                       href='#'
-                      class="fas fa-sort-down" 
-                      onClick={handleSort1}
+                      className={ classNames('fas', {'fa-sort-down': sxeptheoten===false, 'fa-sort-up': sxeptheoten===true})}
+                      onClick={handleSort}
                     >
                     </i> &nbsp; &nbsp;  
-                    <i 
-                      class="fas fa-sort-up"
-                      href='#'
-                      onClick={handleSort2}
-                    >
-                    </i>    
+                    
                   </Col>
                   <Col 
                     className={ classNames('data-id', {an: trangthaiid===true})}
@@ -235,11 +252,12 @@ function Dashboad41() {
                 </Row>
 
                 
-                {currentPosts.map((post, index) => (
+                {currentPosts.map((post) => (
                   
-                  <Row className='data-nav' key={index}>
+                  <Row className='data-nav' key={post.id}>
                     <Col sm='1'>
-                      <Input key={post.id} className='data-input' type="checkbox" checked={posts.Trangthai} />
+                    
+                      <Input id={post.id} className='data-input' type="checkbox" checked={post.Trangthai} onChange={handleChangeCheckboxData(post)} />
                     </Col>         
                     <Col 
                       sm='3'
