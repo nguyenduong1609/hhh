@@ -118,6 +118,17 @@ function Dashboad41() {
     setTrangthaiactivated(checked);
   }
 
+  function handleChangeCheckboxDatas(event) {
+    let checked = event.target.checked;
+    setMangtimkiem(
+      mangtimkiem.map(d =>{
+         {
+          d.Trangthai = checked;
+        }
+        return d;
+      })
+    );
+  }
   function handleChangeCheckboxData(data) {
     return(event) => {
       const checked = event.target.checked;
@@ -215,7 +226,7 @@ function Dashboad41() {
                 
                 <Row className='data-navs'>
                   <Col sm='1'>
-                    <Input className='data-input' type="checkbox" />
+                    <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxDatas} />
                   </Col>         
                   <Col 
                     className={ classNames('data-checkbox', {an: trangthainickname===true})}
