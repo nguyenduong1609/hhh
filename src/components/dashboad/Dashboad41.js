@@ -25,7 +25,7 @@ function Dashboad41() {
   const [trangthaicycle, setTrangthaicycle] = useState(false);
   const [trangthaiphone, setTrangthaiphone] = useState(false);
   const [trangthaiactivated, setTrangthaiactivated] = useState(false);
-  // const [trangthaiid, setTrangthaiid] = useState(false);
+  const [trangthainickname, setTrangthainickname] = useState(false);
   
 
 
@@ -92,6 +92,10 @@ function Dashboad41() {
     setMangtimkiem(mangsx);    
   }
 
+  function handleChangeCheckboxnickname(event) {
+    let checked = event.target.checked;
+    setTrangthainickname(checked);
+  }
   function handleChangeCheckboxid(event) {
     let checked = event.target.checked;
     setTrangthaiid(checked);
@@ -131,39 +135,33 @@ function Dashboad41() {
               <Link to='/connectivity' className='nav-links-db4'>
                 Connectivity
               </Link>
-            </li>                        
-          </ul>
+            </li>
 
-          <ul className='nav-menu-db4'>
-            <li className='nav-item-db4'>
-              <Input 
-                className='data-input' 
-                type="checkbox" 
-                // onChange={event => {
-                //   let checke = event.target.checked;
-                //   console.log(checke);
-                //  }
-                   
-                //  }
-              />{'Nickname'}
-            </li>
-            <li className='nav-item-db4'>
-              <Input
-                className='data-input' 
-                type="checkbox" 
-                onChange={handleChangeCheckboxid}
-              />{'ID'}
-            </li>
-            <li className='nav-item-db4'>
-              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxcycle} />{'Cycle To Date Usage'}
-            </li>   
-            <li className='nav-item-db4'>
-              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxphone} />{'Phone Number'}
-            </li>
-            <li className='nav-item-db4'>
-              <Input className='data-input' type="checkbox" onChange={handleChangeCheckboxactivated} />{'Activated'}
-            </li>                       
+            
+
           </ul>
+          <div className='hien-an'>
+              Hiện Ẩn &nbsp;&nbsp;
+              <i href='#' class="fas fa-sort-down" ></i>
+              <ul className='nav-an'>
+                <li className='nav-item-an'>
+                  <Input className='nickname-an' type="checkbox" onChange={handleChangeCheckboxnickname} />{'Nickname'}
+                </li>
+                <li className='nav-item-an'>
+                  <Input className='id-an' type="checkbox" onChange={handleChangeCheckboxid} />{'ID'}
+                </li>
+                <li className='nav-item-an'>
+                  <Input className='cycle-an' type="checkbox" onChange={handleChangeCheckboxcycle} />{'Cycle To Date Usage'}
+                </li>   
+                <li className='nav-item-an'>
+                  <Input className='phone-an' type="checkbox" onChange={handleChangeCheckboxphone} />{'Phone Number'}
+                </li>
+                <li className='nav-item-an'>
+                  <Input className='activated-an' type="checkbox" onChange={handleChangeCheckboxactivated} />{'Activated'}
+                </li>                      
+              </ul>
+            </div>
+         
 
 
           <form className="container-search">            
@@ -196,7 +194,10 @@ function Dashboad41() {
                   <Col sm='1'>
                     <Input className='data-input' type="checkbox" />
                   </Col>         
-                  <Col className='data-checkbox' sm='3'>
+                  <Col 
+                    className='data-checkbox' 
+                    className={ classNames('data-checkbox', {an: trangthainickname===true})}
+                    sm='3'>
                     Nickname &nbsp; &nbsp;
                     <i 
                       href='#'
@@ -240,7 +241,10 @@ function Dashboad41() {
                     <Col sm='1'>
                       <Input key={post.id} className='data-input' type="checkbox" checked={posts.Trangthai} />
                     </Col>         
-                    <Col sm='3'>
+                    <Col 
+                      sm='3'
+                      className={ classNames( {an: trangthainickname===true})}
+                    >
                       {post.Nickname}
                     </Col>
                     <Col 
