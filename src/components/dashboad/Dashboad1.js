@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Button } from 'react-router-dom';
-// import { Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
+
 import './Dashboad1.css';
 
 function Dashboad1() {

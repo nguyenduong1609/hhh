@@ -7,7 +7,7 @@ function Inform() {
         <div className='container-inform'>
           <div className='inform-1'>
             <div className='inform-1-1'>
-              <i class="far fa-circle"> &ensp; Recent Activity </i> 
+              <i className="far fa-circle"> &ensp; Recent Activity </i> 
                     
             </div>
             <div className='otrong'> </div>
@@ -15,15 +15,15 @@ function Inform() {
           
           <div className='sim-disabled'>
             <div className='inform-logo sim-disabled-logo'>
-              <i class="fas fa-sim-card">  </i>
+              <i className="fas fa-sim-card">  </i>
               <p>SIM Disabled</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 2 mins ago</i>
-                <i class="far fa-user"> Billy Bob</i>
+                <i className="far fa-clock"> 2 mins ago</i>
+                <i className="far fa-user"> Billy Bob</i>
               </div>
               <p className='infomation-0'>
                 <a href="#" className='infomation-0-1'>SIM Apollo</a>
@@ -37,15 +37,15 @@ function Inform() {
 
           <div className='user-invited'>
             <div className='inform-logo sim-disabled-logo'>
-              <i class="far fa-user-circle"></i>
+              <i className="far fa-user-circle"></i>
               <p>User Invited</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 8 mins ago</i>
-                <i class="far fa-user"> John Smith</i>
+                <i className="far fa-clock"> 8 mins ago</i>
+                <i className="far fa-user"> John Smith</i>
               </div>
 
               <p className='infomation-0'>
@@ -61,15 +61,15 @@ function Inform() {
 
           <div className='sim-activated'>
             <div className='inform-logo sim-disabled-logo'>
-              <i class="fas fa-sim-card">  </i>
+              <i className="fas fa-sim-card">  </i>
               <p>SIM Activated</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 43 mins ago</i>
-                <i class="far fa-user"> Paul Hue</i>
+                <i className="far fa-clock"> 43 mins ago</i>
+                <i className="far fa-user"> Paul Hue</i>
               </div>
               <p className='infomation-0'>
                 <a href="#" className='infomation-0-1'>SIM 435726732</a>
@@ -85,15 +85,15 @@ function Inform() {
 
           <div className='device-removed'>
             <div className='inform-logo'>
-              <i class="fas fa-microchip"></i>
+              <i className="fas fa-microchip"></i>
               <p>Device Removed</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 1 hour ago</i>
-                <i class="far fa-user"> Paul Hue</i>
+                <i className="far fa-clock"> 1 hour ago</i>
+                <i className="far fa-user"> Paul Hue</i>
               </div>
               <p className='infomation-0'>
                 <a href="#" className='infomation-0-1'>IDE Board</a>
@@ -108,13 +108,13 @@ function Inform() {
 
           <div className='connection-failed'>
             <div className='inform-logo'>
-              <i class="fas fa-wifi"></i>
+              <i className="fas fa-wifi"></i>
               <p>Connection Failed</p>
             </div>
 
             <div className='infomation'>
               <div>
-                <i class="far fa-clock"> 1.2 hours ago</i>
+                <i className="far fa-clock"> 1.2 hours ago</i>
               </div>
               <p className='infomation-0'>
                 <a href="#" className='infomation-0-1'>loT Button</a>
@@ -126,13 +126,13 @@ function Inform() {
 
           <div className='device-failed'>
             <div className='inform-logo'>
-              <i class="fas fa-microchip"></i>
+              <i className="fas fa-microchip"></i>
               <p>Device Failed</p>
             </div>
 
             <div className='infomation'>
               <div>
-                <i class="far fa-clock"> 2.6 hours ago</i>
+                <i className="far fa-clock"> 2.6 hours ago</i>
               </div>
               <p className='infomation-0'>
                 Device &nbsp;
@@ -148,15 +148,15 @@ function Inform() {
 
           <div className='sim-activated'>
             <div className='inform-logo sim-disabled-logo'>
-              <i class="fas fa-sim-card">  </i>
+              <i className="fas fa-sim-card">  </i>
               <p>SIM Activated</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 3.3 hours ago</i>
-                <i class="far fa-user"> Adrian Balkwill</i>
+                <i className="far fa-clock"> 3.3 hours ago</i>
+                <i className="far fa-user"> Adrian Balkwill</i>
               </div>
               <p className='infomation-0'>
                 <a href="#" className='infomation-0-1'>SIM 24500679</a>
@@ -172,14 +172,14 @@ function Inform() {
 
           <div className='new-device'>
             <div className='inform-logo'>
-              <i class="fas fa-microchip"></i>
+              <i className="fas fa-microchip"></i>
               <p>New Device</p>
             </div>
 
             <div className='infomation'>
               <div>
-                <i class="far fa-clock"> 8 hours ago</i>
-                <i class="far fa-user"> John Smith</i>
+                <i className="far fa-clock"> 8 hours ago</i>
+                <i className="far fa-user"> John Smith</i>
               </div>
               <p className='infomation-0'>
                 Device &nbsp;
@@ -191,14 +191,14 @@ function Inform() {
 
           <div className='user-login'>
             <div className='inform-logo sim-disabled-logo'>
-              <i class="far fa-user-circle"></i>
+              <i className="far fa-user-circle"></i>
               <p>User Login</p>
             </div>
 
             <div className='infomation'>
 
               <div>
-                <i class="far fa-clock"> 3 hours ago</i>
+                <i className="far fa-clock"> 3 hours ago</i>
               </div>
 
               <p className='infomation-0'>

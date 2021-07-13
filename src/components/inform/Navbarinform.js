@@ -11,12 +11,12 @@ function Navbarinform() {
                     <ul className='navinform-menu'>
                         <li className='navinform-item'>
                             <Link to='/' className='navinform-links'>
-                                <i class="far fa-bell"></i>                                
+                                <i className="far fa-bell"></i>                                
                             </Link>
                         </li>
                         <li className='navinform-item'>
                             <Link to='/services' className='navinform-links'>
-                                <i class="fas fa-bolt"></i>
+                                <i className="fas fa-bolt"></i>
                             </Link>
                         </li>
                         

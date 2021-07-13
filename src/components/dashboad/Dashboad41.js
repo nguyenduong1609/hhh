@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pagination from './listdevices/Pagination'
 import classNames from 'classnames';
 import './listdevices/Pagination.css'
@@ -57,8 +57,7 @@ function Dashboad41() {
 
   function handleChange(event) {
     setPostsPerPage(event.target.value);
-    const howManyPages = Math.ceil(mangtimkiem.length/postsPerPage);
-    // console.log('sau khi set: ',howManyPages);
+    
   }
 
   function handleSearchTermChange(e) {
@@ -122,7 +121,7 @@ function Dashboad41() {
     let checked = event.target.checked;
     setMangtimkiem(
       mangtimkiem.map(d =>{
-         {
+        {
           d.Trangthai = checked;
         }
         return d;
@@ -135,7 +134,7 @@ function Dashboad41() {
       
      setMangtimkiem(
        mangtimkiem.map(d =>{
-         if (data.id ==d.id) {
+         if (data.id ===d.id) {
            d.Trangthai = checked;
          }
          return d;

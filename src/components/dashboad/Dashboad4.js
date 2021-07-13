@@ -98,9 +98,9 @@ class Dashboad4 extends Component {
             </li>                        
           </ul>
 
-          <div class="container-search">            
+          <div className="container-search">            
             <input type="search" className="search" placeholder="Search..." />
-            <span class="icon"><i class="fa fa-search"></i></span>
+            <span className="icon"><i className="fa fa-search"></i></span>
           </div>
 
           <select ref = {this.select} onChange={this.thayDoiSoLuong}>

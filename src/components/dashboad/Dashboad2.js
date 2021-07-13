@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, ButtonGroup } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import './Dashboad2.css';
@@ -64,28 +63,28 @@ function Dashboad2() {
                 <div className="w-m">
                     <button className='w-m-1'>Weekly</button>
                     <button className='w-m-2'>
-                        <i class="fas fa-history"></i>
+                        <i className="fas fa-history"></i>
                         &nbsp; Monthly
                     </button>
                 </div>
                     
-                <div class="row container-chart">
+                <div className="row container-chart">
                     <div className='conten-chart'>
                         <p className>Device Connections</p>
                        
-                        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                        <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
                     </div>
                    
-                    <div class="stats">
-                        <div class="stat">
+                    <div className="stats">
+                        <div className="stat">
                             <span>18%</span>
                             <span>New</span>
                         </div>
-                        <div class="stat">
+                        <div className="stat">
                             <span>4%</span>
                             <span>Old</span>
                         </div>
-                        <div class="stat">
+                        <div className="stat">
                             <span>-0%</span>
                             <span>Faled</span>
                         </div>                            

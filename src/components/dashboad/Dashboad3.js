@@ -1,15 +1,10 @@
 import React from 'react';
-import { Button, ButtonGroup } from 'reactstrap';
-import { Link } from 'react-router-dom';
-
 import './Dashboad3.css';
 
 import Dashboad3Chart1 from './chart/Dashboad3Chart1'
 import Dashboad3Chart2 from './chart/Dashboad3Chart2';
 import Dashboad3Chart3 from './chart/Dashboad3Chart3';
 import Mymap from './chart/map';
-// import Dashboad3Chart5 from './chart/Dashboad3Chart5';
-// import Dashboad3Chart6 from './chart/Dashboad3Chart6';
 
 
 function Dashboad3() {
@@ -19,7 +14,7 @@ function Dashboad3() {
         <div className='containerchart'>
           <div className='conten-chart'>
             <p className>Network Usage</p>                       
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
           </div>
           <div className='row'>
             <div className='col-md-6'>
@@ -56,7 +51,7 @@ function Dashboad3() {
         <div className='row containerchart'>
           <div className='conten-chart'>
             <p className>Device Connections</p>                       
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
           </div>
           {/* <Mymap /> */}
         </div>

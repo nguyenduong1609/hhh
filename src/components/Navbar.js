@@ -54,7 +54,7 @@ function Navbar() {
                     </ul>
 
                     <Link to='/' className= 'navbar-logo-active' onClick={closeMobileMenu}>
-                        <i class="fas fa-water"></i>                    
+                        <i className="fas fa-water"></i>                    
                     </Link>                   
                     
                     <div className='admin'> 

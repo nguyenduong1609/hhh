@@ -5,7 +5,7 @@ function Dashboad2CardItem(props) {
     return (
         <div className='dbitem'>
           <Link className='dashboad2__cards__item__link' to={props.path}>
-            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
           </Link>
           <div className='dashboad2__cards__item__icon'>
             <i className={props.icon}></i>
