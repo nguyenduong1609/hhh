@@ -38,11 +38,13 @@ function Dashboad41() {
       // console.log('dai ca duong' , res);
       setPosts(res.data);
       setMangtimkiem(res.data);
+      // console.log('mang tim kiem: ', mangtimkiem);
       setLoading(false)
       
     }
     fetchPosts()
   }, [])
+  console.log('mang tim kiem sau: ', mangtimkiem)
   // console.log('dai ca duong111' , mangtimkiem);
   if (loading && posts.length === 0) {
     return <h2>Loading...</h2>
